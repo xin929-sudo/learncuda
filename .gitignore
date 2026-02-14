@@ -1,0 +1,17 @@
+# 忽略 CMake 生成的构建目录
+build/
+bin/
+
+# 忽略 VS Code 的本地配置文件 (包含你的本地路径，不建议上传)
+.vscode/
+
+# 忽略临时编译文件 (双重保险)
+*.exe
+*.obj
+*.exp
+*.lib
+*.pdb
+*.ilk
+
+# 忽略系统缩略图
+Thumbs.db

@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.18)
+cmake_minimum_required(VERSION 3.15)
 
 # 项目名称
 project(CudaCourse LANGUAGES CXX CUDA)
@@ -41,7 +41,8 @@ endfunction()
 
 # ================= 在这里注册你的文件夹 =================
 
-add_day_project(day1)
+# add_day_project(day1)
 
 # 以后写了 day2，把下面这行的注释(#)去掉就行了
 # add_day_project(day2)
+add_day_project(day3)

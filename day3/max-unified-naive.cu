@@ -92,5 +92,10 @@ int main() {
 
     printf("gpu 耗时 %0.2f ms \n\n",gpu_time);
 
-    cudaFree(data);
+    // 内存需要释放掉
+    CUDA_CHECK(cudaFree(data));
+    CUDA_CHECK(cudaFree(gpu_result));
+    CUDA_CHECK(cudaEventDestroy(start));
+    CUDA_CHECK(cudaEventDestroy(stop));
+    
 }

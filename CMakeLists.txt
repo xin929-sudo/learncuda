@@ -45,4 +45,4 @@ endfunction()
 
 # 以后写了 day2，把下面这行的注释(#)去掉就行了
 # add_day_project(day2)
-add_day_project(day3)
+add_day_project(day4)

@@ -3,10 +3,21 @@ cmake_minimum_required(VERSION 3.15)
 # 项目名称
 project(CudaCourse LANGUAGES CXX CUDA)
 
+# =======================================================================
+# 🚀 修改点 1：只设置宿主 C++ 编译器的标准为 17
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# 🚀 修改点 2：删掉 set(CMAKE_CUDA_STANDARD 17)，改为强行给 nvcc 传参！
+set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -std=c++17")
+
+# 🚀 修改点 3：加入 NVIDIA 官方提示的宏，双重屏蔽报错
+add_compile_definitions(CCCL_IGNORE_DEPRECATED_CPP_DIALECT)
+# =======================================================================
+
 # ================= 配置区域 =================
 
 # 1. 设置显卡架构 (RTX 2060 = sm_75)
-# 如果以后换 5090，改成 120 即可
 set(CMAKE_CUDA_ARCHITECTURES 75)
 
 # 2. 设置输出目录 (把 .exe 都生成到 bin 文件夹，不乱放)
@@ -42,7 +53,5 @@ endfunction()
 # ================= 在这里注册你的文件夹 =================
 
 # add_day_project(day1)
-
-# 以后写了 day2，把下面这行的注释(#)去掉就行了
 # add_day_project(day2)
-add_day_project(day7)
+add_day_project(day8)
